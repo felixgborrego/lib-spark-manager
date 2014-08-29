@@ -1,11 +1,13 @@
 Work in progress...
 
 ## Description
-Scala library to manage an a Spark cluster deployed in EC2.
-It allows you to launch your cluster on demand and submit task.
+Scala library to manage a Spark cluster deployed in EC2.
+It allows you to launch your cluster on demand and submit jobs.
 
 It makes use of $SPARH_HOME/ec2/spark-ec script to create the cluster,
 but unlike spark-submit, it allows you to deploy your jar to your ec2 cluster from a remote machine.
+
+Spark sbt plugin: https://github.com/felixgborrego/lib-spark-manager
 
 ## Usage
 

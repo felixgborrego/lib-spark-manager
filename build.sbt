@@ -1,3 +1,6 @@
+import bintray.AttrMap
+import bintray._
+
 name := """lib-spark-manager"""
 
 organization := "com.gilt"
@@ -14,3 +17,12 @@ libraryDependencies ++= Seq(
 )
 
 resolvers += "JAnalyse Repository" at "http://www.janalyse.fr/repository/"
+
+publishMavenStyle := false
+
+bintrayPublishSettings
+
+bintray.Keys.repository in bintray.Keys.bintray := "repo"
+
+bintray.Keys.bintrayOrganization in bintray.Keys.bintray := None
+

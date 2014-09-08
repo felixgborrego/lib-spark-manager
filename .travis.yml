@@ -1,0 +1,10 @@
+language: scala
+scala:
+  - 2.10.4
+script:
+  - sbt -jvm-opts travis/jvmopts.build ++$TRAVIS_SCALA_VERSION clean test
+jdk:
+  - oraclejdk7
+notifications:
+  email:
+    fborrego@gilt.com

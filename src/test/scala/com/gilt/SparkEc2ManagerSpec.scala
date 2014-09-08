@@ -74,6 +74,7 @@ class SparkEc2ManagerSpec extends WordSpec with MockitoSugar with Matchers {
       val sparkCluster = mock[SparkCluster]
 
       when(ssh.copyFileToMaster("/local.jar", sparkCluster)).thenReturn(Future.successful("/remote.jar"))
+      when(script.getMaster(localConfig)).thenReturn(Future.successful(Some(host)))
 
       val manager = SparkEc2Manager(script, ssh)
       manager.executeJob("/local.jar", "testclass", sparkCluster)

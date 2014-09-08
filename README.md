@@ -1,4 +1,4 @@
-Work in progress...
+![Build Status](https://travis-ci.org/felixgborrego/lib-spark-manager.svg?branch=master)
 
 ## Description
 Scala library to manage a Spark cluster deployed in EC2.
@@ -37,7 +37,7 @@ val result = manager.executeJob("path to jar", "class name", cluster)
 
 ## Compile
 
-It's not in any central repository yet so you'll need to compile and install this lib on your own before use it. 
+It's a work in progress and it's not in any central repository yet so you'll need to compile and install this lib on your own before use it. 
 
 sbt publish-local
 
@@ -47,7 +47,7 @@ sbt publish-local
 This project is still in an early stage, there are many things that should be improved:
 
 - [X] Support 1.0.x
+- [X] Allow auto stop the cluster after the job ends.
 - [ ] Support 1.1.x
-- [ ] Allow auto stop the cluster after the job ends.
 - [ ] ...
 

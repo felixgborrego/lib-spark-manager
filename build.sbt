@@ -24,5 +24,7 @@ bintrayPublishSettings
 
 bintray.Keys.repository in bintray.Keys.bintray := "repo"
 
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
+
 bintray.Keys.bintrayOrganization in bintray.Keys.bintray := None
 

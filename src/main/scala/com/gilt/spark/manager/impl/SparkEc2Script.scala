@@ -1,10 +1,13 @@
 package com.gilt.spark.manager.impl
 
+import java.io.{ByteArrayInputStream, BufferedOutputStream, File}
 import java.lang
 import java.net.URL
 
 import com.gilt.spark.manager.model.{ ClusterConfig, LocalConfig, ClusterType }
 import org.slf4j.LoggerFactory
+
+
 
 import scala.sys.process._
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -75,7 +78,7 @@ class SparkEc2Script {
 
     logger.debug(s"running: $cmd")
 
-    val pb = new lang.ProcessBuilder(cmd.split(" ").toList)
+    var pb = new lang.ProcessBuilder(cmd.split(" ").toList)
     val env = pb.environment()
     pb.environment().put("AWS_ACCESS_KEY_ID", config.awsAccessKeyId)
     pb.environment().put("AWS_DEFAULT_REGION", config.region)
@@ -85,8 +88,15 @@ class SparkEc2Script {
       (o: String) => println("out " + o),
       (e: String) => println("err " + e))
 
-    val output = pb lines_! (processLogger)
 
+    def yes = new ByteArrayInputStream("y\n".getBytes)
+
+    val pbScala = pb #< yes
+
+    val output=  pbScala lines_!
+
+
+    
     output.foreach(line =>
       logger.debug(s"out>\t$line"))
 

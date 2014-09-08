@@ -37,6 +37,8 @@ val result = manager.executeJob("path to jar", "class name", cluster)
 
 ## Compile
 
+It's not in any central repository yet so you'll need to compile and install this lib on your own before use it. 
+
 sbt publish-local
 
 

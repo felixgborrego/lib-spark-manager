@@ -36,7 +36,7 @@ class SparkEc2SshClient {
     val sparkHome = clusterInfo.clusterConfig.remoteSparkHome
     val sparkPathBin = s"$sparkHome/bin"
 
-    val sparkSubmit = s"$sparkPathBin/spark-submit $remoteJar --class $classJob"
+    val sparkSubmit = s"$sparkPathBin/spark-submit --class $classJob $remoteJar"
     logger.info("Submiting task to Spark Cluster")
     logger.info(sparkSubmit)
 

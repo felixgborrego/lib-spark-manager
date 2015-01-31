@@ -1,0 +1,3 @@
+# Output for
+# spark-ec2 -r eu-west-1 -k FelixPersonalGilt -i FelixPersonalGilt.pem  test-master Spark
+Invalid action: test-master

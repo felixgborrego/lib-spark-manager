@@ -7,7 +7,7 @@ It allows you to launch your cluster on demand and submit jobs.
 It makes direct use of aws-java-sdk to create the cluster,
 and it allows you to deploy your jar to your ec2 cluster from a remote machine.
 
-Spark sbt plugin: https://github.com/felixgborrego/lib-spark-manager
+Spark sbt plugin: https://github.com/felixgborrego/sbt-spark-ec2-plugin
 
 WARNING: This lib is in an early stage. Do not use this with any expectation of stability, what is here is just an experiment over the weekend, and would need more work to reach a point where it could be used as a base for anything else.
 
